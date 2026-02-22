@@ -26,6 +26,7 @@ struct ListingImageCarouselView: View {
         }
         .tabViewStyle(.page)
     }
+    
 }
 
 #Preview {
