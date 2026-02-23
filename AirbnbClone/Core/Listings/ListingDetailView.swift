@@ -28,7 +28,8 @@ struct ListingDetailView: View {
                                 .fill(.white)
                                 .frame(width: 32, height: 32)
                         }
-                        .padding(36)
+                        .padding(.top, 64)
+                        .padding(.leading, 32)
                 }
             }
             
@@ -171,6 +172,7 @@ struct ListingDetailView: View {
             }
             .padding()
         }
+        .toolbar(.hidden, for: .tabBar)
         .ignoresSafeArea()
         .padding(.bottom, 64)
         .overlay(alignment: .bottom) {
