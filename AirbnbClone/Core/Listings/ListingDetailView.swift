@@ -101,7 +101,7 @@ struct ListingDetailView: View {
                                 .font(.footnote)
                                 .fontWeight(.semibold)
                             
-                            Text("Superhosts are experienced, highly rated hosts who are committed to providing great stars for guests")
+                            Text("Superhosts are experienced, highly rated hosts who are committed to providing great stars for guests.")
                                 .font(.caption)
                                 .foregroundStyle(.gray)
                         }
