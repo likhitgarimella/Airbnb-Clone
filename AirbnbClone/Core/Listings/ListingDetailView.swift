@@ -12,6 +12,14 @@ struct ListingDetailView: View {
     
     @Environment(\.dismiss) var dismiss
     let listing: Listing
+    @State private var cameraPosition: MapCameraPosition
+    
+    init(listing: Listing) {
+        self.listing = listing
+        
+        let region = MKCoordinateRegion(center: listing.city == "Los Angeles" ? .losAngeles : .miami, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        self._cameraPosition = State(initialValue: .region(region))
+    }
     
     var body: some View {
         ScrollView {
@@ -167,7 +175,7 @@ struct ListingDetailView: View {
                 Text("Where you'll be")
                     .font(.headline)
                 
-                Map()
+                Map(position: $cameraPosition)
                     .frame(height: 200)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
             }
